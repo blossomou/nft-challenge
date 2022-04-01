@@ -26,3 +26,6 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 
 npx create-next-app -e with-tailwindcss nft-challenge
 yarn add @thirdweb-dev/react @thirdweb-dev/sdk ethers
+yarn global add @sanity/cli
+sanity login
+sanity init --coupon sonny2022

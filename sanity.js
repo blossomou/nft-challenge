@@ -1,4 +1,5 @@
-import { createClient, createCurrentUserHook, createImageUrlBuilder } from 'next-sanity';
+import createImageUrlBuilder from '@sanity/image-url';
+import { createClient } from 'next-sanity';
 
 export const config = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
@@ -13,5 +14,5 @@ export const sanityClient = createClient(config)
 
 export const urlFor = (source) => createImageUrlBuilder(config).image(source)
 
-//Helper function for using the current logged in user account
-export const useCurrentUser = createCurrentUserHook(config)
+// //Helper function for using the current logged in user account
+// export const useCurrentUser = createCurrentUserHook(config)

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { sanityClient, urlFor } from '../sanity';
 import { Collection } from '../typings';
@@ -26,22 +27,24 @@ const Home = ({ collections }: Props) => {
       <main className="p-10 shadow-xl bg-slate-100 shadow-rose-400/20">
         <div className="grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {collections.map((collection, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center transition-all duration-200 cursor-pointer hover:scale-105"
-            >
-              <img
-                className="object-cover roudned-2xl h-96 w-60"
-                src={urlFor(collection.mainImage).url()}
-                alt=""
-              />
-              <div className="p-5">
-                <h2 className="text-3xl">{collection.title}</h2>
-                <p className="mt-2 text-sm text-gray-400">
-                  {collection.description}
-                </p>
+            <Link href={`/nft/${collection.slug.current}`}>
+              <div
+                key={index}
+                className="flex flex-col items-center transition-all duration-200 cursor-pointer hover:scale-105"
+              >
+                <img
+                  className="object-cover roudned-2xl h-96 w-60"
+                  src={urlFor(collection.mainImage).url()}
+                  alt=""
+                />
+                <div className="p-5">
+                  <h2 className="text-3xl">{collection.title}</h2>
+                  <p className="mt-2 text-sm text-gray-400">
+                    {collection.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </main>

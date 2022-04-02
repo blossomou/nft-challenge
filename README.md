@@ -30,3 +30,5 @@ yarn global add @sanity/cli
 sanity login
 sanity init --coupon sonny2022
 yarn add next-sanity @sanity/image-url
+
+url: https://nftchallengedev.sanity.studio/
